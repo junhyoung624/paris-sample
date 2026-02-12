@@ -20,7 +20,7 @@ body {
     max-width: 1470px;
     padding: 0 1.5em;
     margin: 0 auto;
-    background: rgba(255, 0, 0, 0.2);
+    /* background: rgba(255, 0, 0, 0.2); */
     position: relative;
 }
 
@@ -147,8 +147,13 @@ section {
     top: 0;
     font-size: 14px;
     font-weight: 600;
+    
+}
+
+.more-btn>a {
     border-bottom: 2px solid;
 }
+
 .wrap {}
 
 .list {
@@ -250,6 +255,7 @@ section {
 footer {
     background: #454a56;
     color: #fff;
+    padding: 30px 0;
 }
 
 footer .inner {
@@ -364,6 +370,74 @@ footer h3 {
         height: 2px;
         background: #fff;
     }
+
+    /* 모바일메뉴 */
+    .mobile-menu-wrap {
+        display: block;
+        position: fixed;
+        background: #fff;
+        width: 280px;
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        z-index: 10000;
+        font-size: 14px;
+        color: var(--linkText);
+    }
+
+    .mobile-menu-wrap .close-btn {
+        padding: 24px 20px;
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .mobile-menu-wrap .close-btn span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #212121;
+        /* position: absolute; */
+    }
+
+    .mobile-menu-wrap .close-btn span:first-child {
+        transform: rotate(45deg) translate(1px, 1px);  
+        /* background: red; */
+    }
+
+    .mobile-menu-wrap .close-btn span:last-child {
+        transform: rotate(-45deg);
+    }
+
+    .mobile-menu-list {
+        padding: 24px 20px;
+        border-bottom: 1px solid #ebebeb;
+        line-height: 2.2;
+    }
+
+    .mobile-menu-list .sub-wrap {
+        text-indent: 20px;
+        display: none;
+    }
+
+    .mobile-menu-list>.sub-has>a {
+        display: block;
+        background: url(../images/nav-arrow-down.svg) no-repeat 95% center;
+    }
+
+    .mobile-menu-list>.sub-has>a.active {
+        background-image: url(../images/nav-arrow-up.svg);
+    }
+
+    .mobile-sns-wrap {
+        padding: 24px 20px;
+    }
+
+    .mobile-sns-wrap .sns-list {
+        margin-top: 20px;
+    }
+
+    .mobile-sns-wrap .sns-list>li>a {
+        border: 1px solid var(--mainColor);
+    }
 }
 
 @media screen and (max-width:768px) {
@@ -396,8 +470,22 @@ footer h3 {
 }
 
 @media screen and (max-width: 480px) {
+    .main-slider-list>li {
+        flex: 0 0 100%;
+    }
+
     .promotion-list>li {
         flex: 0 0 100%;
+    }
+
+    .pb-story-list>li .text-box p {
+        display: none;
+    }
+
+    .more-btn {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
     }
 
     footer .inner {
